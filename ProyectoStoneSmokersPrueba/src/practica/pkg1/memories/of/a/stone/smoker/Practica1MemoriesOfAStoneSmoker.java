@@ -123,17 +123,17 @@ public class Practica1MemoriesOfAStoneSmoker {
 
                         aux = palabra.nextToken();
                         if (cod.verificarCodop(aux) == true || lineaActual.isBlank()) {
-                            if (lineaActual.isBlank()) {
+                            if (lineaActual.isBlank()) {                                //Si la linea actual esta en blanco, la posicion del codop se convierte en nulo
                                 estructura[1][contadorDeLineas] = null;
-                            } else {
+                            } else {                                                    //Si encuentra el codop y esta correcto guarda el codop en su lugar
                                 estructura[1][contadorDeLineas] = aux;
-                                while (palabra.hasMoreTokens()) {
+                                while (palabra.hasMoreTokens()) {                       //Si la linea tiene mas palabras, se guarda la palabra en el operando
 
-                                    aux = palabra.nextToken();
+                                    aux = palabra.nextToken();        
                                     estructura[2][contadorDeLineas] = aux;
                                 }
                             }
-                        } else {
+                        } else {                                                      //Si hay un error en el codop envia un error
                             numeroDeErrores++;
                             errores[numeroDeErrores] = contadorDeLineas;
                         }
@@ -150,7 +150,7 @@ public class Practica1MemoriesOfAStoneSmoker {
 
                 }// FIN DEL SWITCH
 
-                if (lineaActual.contains("End")) {
+                if (lineaActual.contains("End")) {                                  //Si encuentra el end, la bandera del while se hace false y se acaba el while
 
                     bandera = false;
                 }
