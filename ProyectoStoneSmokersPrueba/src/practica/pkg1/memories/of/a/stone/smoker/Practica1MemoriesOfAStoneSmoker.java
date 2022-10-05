@@ -23,9 +23,9 @@ public class Practica1MemoriesOfAStoneSmoker {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
         FileReader lectorDeArchivo = new FileReader(
-                "C:\\Users\\waldi\\Documents\\NetBeansProjects\\New Folder\\Clon Practica1\\New Folder\\practica-1-memories-of-a-stone-smoker\\Practica-1-memories-of-a-stone-smoker\\src\\practica\\pkg1\\memories\\of\\a\\stone\\smoker\\P1ASM.txt");
+                "C:\\Users\\waldi\\Desktop\\PracticaofStoneSmokers\\StoneSmokersNoClass\\ProyectoStoneSmokersPrueba\\src\\practica\\pkg1\\memories\\of\\a\\stone\\smoker\\P1ASM.txt");
         FileReader lectorDeArchivoAux = new FileReader(
-                "C:\\Users\\waldi\\Documents\\NetBeansProjects\\New Folder\\Clon Practica1\\New Folder\\practica-1-memories-of-a-stone-smoker\\Practica-1-memories-of-a-stone-smoker\\src\\practica\\pkg1\\memories\\of\\a\\stone\\smoker\\P1ASM.txt");
+                "C:\\Users\\waldi\\Desktop\\PracticaofStoneSmokers\\StoneSmokersNoClass\\ProyectoStoneSmokersPrueba\\src\\practica\\pkg1\\memories\\of\\a\\stone\\smoker\\P1ASM.txt");
 
         try {// TRY-CATCH PARA LEER EL ARC HIVO
             String lineaActual;
@@ -123,17 +123,19 @@ public class Practica1MemoriesOfAStoneSmoker {
 
                         aux = palabra.nextToken();
                         if (cod.verificarCodop(aux) == true || lineaActual.isBlank()) {
-                            if (lineaActual.isBlank()) {                                //Si la linea actual esta en blanco, la posicion del codop se convierte en nulo
+                            if (lineaActual.isBlank()) { // Si la linea actual esta en blanco, la posicion del codop se
+                                                         // convierte en nulo
                                 estructura[1][contadorDeLineas] = null;
-                            } else {                                                    //Si encuentra el codop y esta correcto guarda el codop en su lugar
+                            } else { // Si encuentra el codop y esta correcto guarda el codop en su lugar
                                 estructura[1][contadorDeLineas] = aux;
-                                while (palabra.hasMoreTokens()) {                       //Si la linea tiene mas palabras, se guarda la palabra en el operando
+                                while (palabra.hasMoreTokens()) { // Si la linea tiene mas palabras, se guarda la
+                                                                  // palabra en el operando
 
-                                    aux = palabra.nextToken();        
+                                    aux = palabra.nextToken();
                                     estructura[2][contadorDeLineas] = aux;
                                 }
                             }
-                        } else {                                                      //Si hay un error en el codop envia un error
+                        } else { // Si hay un error en el codop envia un error
                             numeroDeErrores++;
                             errores[numeroDeErrores] = contadorDeLineas;
                         }
@@ -150,7 +152,8 @@ public class Practica1MemoriesOfAStoneSmoker {
 
                 }// FIN DEL SWITCH
 
-                if (lineaActual.contains("End")) {                                  //Si encuentra el end, la bandera del while se hace false y se acaba el while
+                if (lineaActual.contains("End")) { // Si encuentra el end, la bandera del while se hace false y se acaba
+                                                   // el while
 
                     bandera = false;
                 }
